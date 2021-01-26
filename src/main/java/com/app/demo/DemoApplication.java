@@ -19,22 +19,22 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 
-    /*@Bean
+    @Bean
     CommandLineRunner start(UserRepository userRepository, PasswordEncoder passwordEncoder){
         return args -> {
             System.out.println("creating");
             User user=new User();
             user.setPassword(passwordEncoder.encode("123"));
-            user.setTel("123456789");
+            user.setUsername("123456789");
 
             List<Role> roles=new ArrayList<>();
             Role role=new Role();
-            role.setName("ROLE_ADMIN");
-            role.setDescription("admin");
+            role.setName("ROLE_AGENT");
+            role.setDescription("This is agent");
             roles.add(role);
             user.setRoles(roles);
             userRepository.save(user);
         };
-    }*/
+    }
 
 }
