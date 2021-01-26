@@ -39,7 +39,7 @@ public class UserData implements UserDetails {
 
     @Override
     public String getUsername() {
-        return user.getTel();
+        return user.getUsername();
     }
 
     @Override

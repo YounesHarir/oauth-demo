@@ -31,7 +31,7 @@ class DemoApplicationTests {
         System.out.println("creating user");
         User user=new User();
         user.setPassword(passwordEncoder.encode("123"));
-        user.setTel("123456789");
+        user.setUsername("123456789");
 
         List<Role> roles=new ArrayList<>();
         Role role=new Role();

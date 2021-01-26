@@ -19,16 +19,16 @@ public class UserService {
     private PasswordEncoder passwordEncoder;
 
     public User save(User user){
-        if(userRepository.findByTel(user.getTel()) != null){
+        if(userRepository.findByUsername(user.getUsername()) != null){
             throw new UsernameAlreadyExistException("User already exist");
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 
-    public User findUserByLogin(String tel){
-        User user=userRepository.findByTel(tel);
-        if(user == null) throw new UserNotFoundException("User not found with tel : "+tel);
+    public User findUserByLogin(String username){
+        User user=userRepository.findByUsername(username);
+        if(user == null) throw new UserNotFoundException("User not found with username : "+username);
         return user;
     }
 

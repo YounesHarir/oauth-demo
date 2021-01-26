@@ -27,9 +27,9 @@ public class UserController {
         return userService.save(user);
     }
 
-    @GetMapping("/get/{tel}")
-    public User findUserByLogin(@PathVariable String tel){
-        return userService.findUserByLogin(tel);
+    @GetMapping("/get/{username}")
+    public User findUserByLogin(@PathVariable String username){
+        return userService.findUserByLogin(username);
     }
 
     @GetMapping("/getAll")
