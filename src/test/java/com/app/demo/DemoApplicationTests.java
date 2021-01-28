@@ -15,32 +15,12 @@ import java.util.List;
 @SpringBootTest
 class DemoApplicationTests {
 
-    @Autowired
-    private RoleRepository roleRepository;
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private PasswordEncoder passwordEncoder;
 
     @Test
     void contextLoads() {
+
     }
 
-    @Test
-    public void createUser(){
-        System.out.println("creating user");
-        User user=new User();
-        user.setPassword(passwordEncoder.encode("123"));
-        user.setUsername("123456789");
 
-        List<Role> roles=new ArrayList<>();
-        Role role=new Role();
-        role.setName("ROLE_ADMIN");
-        role.setDescription("admin");
-        roles.add(role);
-        user.setRoles(roles);
-
-        userRepository.save(user);
-    }
 
 }
